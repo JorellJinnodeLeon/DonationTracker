@@ -56,12 +56,9 @@
             let via = (value[4]) ? value[4] : null ; 
             let notes = (value[5]) ? value[5] : null ; 
 
-            console.log('add2');
-            console.log(name);
+
             console.log(date);
-            console.log(amount);
-            console.log(via);
-            console.log(notes);
+
             /*$('#dataTables-example').DataTable().row.add([
                 name, date, amount, via, notes
             ]).draw();
@@ -69,7 +66,7 @@
             if(!name && !date && !amount && !via && !notes){
                 console.log('empty');
             }  
-            else if(date.substring(0, 9) == "donations"){
+            else if(date.substring(0, 9) === "Donations"){
                 console.log('donations');
             } 
             else{                     
