@@ -50,12 +50,11 @@
         // dateTimeRenderOption: '',  // TODO: Update placeholder value.
       };
 
-      var res = [];
       var request = gapi.client.sheets.spreadsheets.values.get(params);
-      res = request.then(function(response) {
+      var res = request.then(function(response) {
         // TODO: Change code below to process the `response` object:
         console.log("response result");
-        return response.result;
+        return response.result.values;
         //res = response.result;
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
