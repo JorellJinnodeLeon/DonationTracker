@@ -164,6 +164,7 @@
                                                 <th>Amount</th>
                                                 <th>Donation Via</th>
                                                 <th>Notes</th>
+                                                <th>Notes</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -172,6 +173,7 @@
                                                 <th>Date</th>
                                                 <th>Amount</th>
                                                 <th>Donation Via</th>
+                                                <th>Notes</th>
                                                 <th>Notes</th>
                                             </tr>
                                         </tfoot>
