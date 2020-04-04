@@ -80,14 +80,6 @@
                     "amount":     "amount",
                     "via": "via",
                     "notes":     "Edinburgh",
-                    "extn":       "5421"
-                }, {
-                    "name": "Garrett Winters",
-                    "position": "Director",
-                    "salary": "$5,300",
-                    "start_date": "2011/07/25",
-                    "office": "Edinburgh",
-                    "extn": "8422"
                 } ] )
                 .draw();
                         
