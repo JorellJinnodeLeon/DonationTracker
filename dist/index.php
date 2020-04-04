@@ -75,11 +75,11 @@
             var table = $('#dataTable').DataTable();
  
             table.rows.add( [ {
-                    "date":       "date",
-                    "name":   "name",
-                    "amount":     "amount",
-                    "via": "via",
-                    "notes":     "Edinburgh",
+                           "date",
+                      "name",
+                    "amount",
+                    "via",
+                         "Edinburgh",
                 } ] )
                 .draw();
                         
