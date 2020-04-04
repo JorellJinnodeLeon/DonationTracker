@@ -57,7 +57,7 @@
             let notes = value [5];
 
             
-            var table = document.getElementById("dataTable");
+            /*var table = document.getElementById("dataTable");
             var row = table.insertRow(1);
             var cell0 = row.insertCell(0);
             var cell1 = row.insertCell(1);
@@ -69,7 +69,24 @@
             cell1.innerHTML = date;
             cell2.innerHTML = amount;
             cell3.innerHTML = via;
-            cell4.innerHTML = notes;
+            cell4.innerHTML = notes;*/
+            $(document).ready(function() {
+                var t = $('#dataTable').DataTable();
+                var counter = 1;
+            
+                $('#addRow').on( 'click', function () {
+                    t.row.add( [
+                        counter +'.1',
+                        counter +'.2',
+                        counter +'.3',
+                        counter +'.4',
+                        counter +'.5'
+                    ] ).draw( false );
+            
+                    counter++;
+                } );
+                $('#addRow').click();
+            } );
         }
     }
 
