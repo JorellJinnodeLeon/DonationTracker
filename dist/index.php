@@ -67,14 +67,14 @@
             ]).draw();
             */
             if(!name && !date && !amount && !via && !notes){
-                console.log(empty);
+                console.log('empty');
             }  
             else if(date.substring(0, 9) == "donations"){
-                console.log(donations);
+                console.log('donations');
             } 
             else{                     
                 $('#dataTables-example').DataTable().row.add([
-                    'name', 'date', 'amount', 'via', 'notes'
+                    name, date, amount, via, notes
                 ]).draw();
             }
            
