@@ -49,7 +49,29 @@
     }
 
     function tblLooper(value) {
-        console.log(value);
+        //console.log(value);
+        if(value){
+            let date = value[0];
+            let name = value[1];
+            let amount = value[2];
+            let via = value[4];
+            let notes = value [5];
+
+            
+            var table = document.getElementById("dataTable");
+            var row = table.insertRow(0);
+            var cell0 = row.insertCell(0);
+            var cell1 = row.insertCell(1);
+            var cell2 = row.insertCell(2);
+            var cell3 = row.insertCell(3);
+            var cell4 = row.insertCell(4);
+
+            cell0.innerHTML = name;
+            cell1.innerHTML = date;
+            cell2.innerHTML = amount;
+            cell3.innerHTML = via;
+            cell4.innerHTML = notes;
+        }
     }
 
     function initClient() {
@@ -155,7 +177,7 @@
                                             </tr>
                                         </tfoot>
                                         <tbody>
-                                        <?php 
+                                        <?php /*
                                             $donations = "List of Cash Donors!B7:G200";
                                             $response = $service->spreadsheets_values->get($spreadsheetId,$donations);
                                             $values = $response->getValues();
@@ -166,17 +188,18 @@
                                                 foreach($values as $row){
                                                     if(!isset($row[1]) && !isset($row[0])) continue;
                                                     if(substr($row[0], 0, 9) === "Donations") continue;
+                                                    */
                                             ?>
-                                            <tr>
+                                            <!-- <tr>
                                                 <td><?php print (isset($row[1])) ? $row[1] : null; ?></td>
                                                 <td><?php print (isset($row[0])) ? $row[0] : null; ?></td>
                                                 <td><?php print (isset($row[2])) ? $row[2] : null; ?></td>
                                                 <td><?php print (isset($row[4])) ? $row[4] : null; ?></td>
                                                 <td><?php print (isset($row[5])) ? $row[5] : null; ?></td>
-                                            </tr>
-                                            <?php
-                                                    }
-                                                }
+                                            </tr> -->
+                                            <?php 
+                                                /*    }
+                                                } */
                                             ?>
                                         </tbody>
                                     </table>
@@ -188,7 +211,7 @@
                             <div class="card-header"><i class="fas fa-table mr-1"></i>Non Cash Donors</div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
