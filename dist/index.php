@@ -71,10 +71,15 @@
             cell3.innerHTML = via;
             cell4.innerHTML = notes;*/
             console.log('add2');
-            $('#dataTables-example').DataTable().row.add([
+            console.log(name);
+            console.log(date);
+            console.log(amount);
+            console.log(via);
+            console.log(notes);
+            /*$('#dataTables-example').DataTable().row.add([
                 name, date, amount, via, notes
             ]).draw();
-            
+            */
             //$("#dataTable > tbody").append("<tr><td>row content</td><td>row content</td><td>row content</td><td>row content</td><td>row content</td></tr>");
             
 
