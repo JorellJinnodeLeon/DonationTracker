@@ -39,7 +39,7 @@
       request.then(function(response) {
         let tbl = response.result.values;
         //console.log(test);
-        tblLooper.forEach(myFunction);
+        tbl.forEach(tblLooper);
 
             
       }, function(reason) {
