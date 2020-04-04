@@ -50,11 +50,12 @@
         //console.log(value);
         if(value)
         {
-            let date = value[0];
-            let name = value[1];
-            let amount = value[2];
-            let via = value[4];
-            let notes = value [5];
+            let date = (value[0]) ? value[0] : null ; 
+            let name = (value[1]) ? value[1] : null ; 
+            let amount = (value[2]) ? value[2] : null ; 
+            let via = (value[4]) ? value[4] : null ; 
+            let notes = (value[5]) ? value[5] : null ; 
+
 
             
             /*var table = document.getElementById("dataTable");
