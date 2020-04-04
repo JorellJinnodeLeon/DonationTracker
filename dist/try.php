@@ -33,7 +33,7 @@
         // The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
         // dateTimeRenderOption: '',  // TODO: Update placeholder value.
       };
-
+      console.log("api  as called");
 
       $('#dataTables-example').DataTable().row.add([
         '1', '1', '1'
@@ -116,3 +116,4 @@
 
   </body>
 </html>
+
