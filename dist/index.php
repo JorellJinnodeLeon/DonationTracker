@@ -71,17 +71,11 @@
             cell2.innerHTML = amount;
             cell3.innerHTML = via;
             cell4.innerHTML = notes;*/
+            $('dataTable').DataTable().row.add([
+            '1', '1', '1', '1', '1'
+            ]).draw();
 
-            var table = $('#dataTable').DataTable();
- 
-            table.rows.add( [ {
-                           "date",
-                      "name",
-                    "amount",
-                    "via",
-                         "Edinburgh",
-                } ] )
-                .draw();
+
                         
         }         
     }
