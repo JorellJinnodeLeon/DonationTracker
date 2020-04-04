@@ -53,7 +53,7 @@
       var request = gapi.client.sheets.spreadsheets.values.get(params);
       var res = request.then(function(response) {
         // TODO: Change code below to process the `response` object:
-        return response.result;
+        return response.result.values;
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
       });
