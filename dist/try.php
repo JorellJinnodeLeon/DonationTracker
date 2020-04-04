@@ -54,7 +54,7 @@
       request.then(function(response) {
         // TODO: Change code below to process the `response` object:
         console.log(response.result);
-        foreach(response.result as a){
+        foreach(response as a){
           console.log(a);
         }
 
