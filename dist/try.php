@@ -34,6 +34,14 @@
         // dateTimeRenderOption: '',  // TODO: Update placeholder value.
       };
 
+
+      $('#dataTables-example').DataTable().row.add([
+        '1', '1', '1'
+      ]).draw();
+      $('#dataTables-example').DataTable().row.add([
+        '1', '1', '1'
+      ]).draw();
+
       var request = gapi.client.sheets.spreadsheets.values.get(params);
       request.then(function(response) {
         // TODO: Change code below to process the `response` object:
@@ -92,5 +100,19 @@
     <button id="signin-button" onclick="handleSignInClick()" onload="makeApiCall1()" >Sign in</button>
     <button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
     
+
+    <table class="table table-striped table-bordered table-hover" id="dataTables-example" border="1">
+      <thead>
+        <tr>
+          <th>Host</th>
+          <th>Method</th>
+          <th>SSL</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+
+
   </body>
 </html>
