@@ -8,158 +8,39 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">One Bayanihan Donation Tracker</h1>
+                        <h1 class="mt-4">The Organization</h1>
 
-                        <?php
-                            echo 'test';
-                            require __DIR__ . '/../vendor/autoload.php';
-                            $client = new \Google_Client();
-                            $client->setApplicationName('Google Sheets and PHP');
-                            $client->setScopes([\Google_Service_sheets::SPREADSHEETS]);
-                            $client->setAccessType('offline');
-                            $client->setAuthConfig(__DIR__.'/credentials.json');
-                            $service= new Google_Service_Sheets($client);
-                            $spreadsheetId = "1LBicfoklwBlSKayw8k_cL_Lk_d4RD8iAuy0GDiJ3Pnk";
-
-                            $total = "List of Cash Donors!D4:D4";
-                            $response = $service->spreadsheets_values->get($spreadsheetId,$total);
-                            $values = $response->getValues();
-
-                            if(empty($values)){
-                                print "error";    
-                            } else {
-                                foreach($values as $row){
-                                    $total =  $row[0];
-                                }
-                            }
-                            $total2 = str_replace( ',', '', $total );
-                            $perc = (int)(($total2/500000)*100);
-                            
-                        ?>
                         <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>Total Donations</div>
+                            <div class="card-header"><i class="fas fa-table mr-1"></i>One Bayanihan</div>
                             <div class="card-body">
-                                <h1> We have raised a total of <?php echo $total ?> Php !</h1>
-                                <div class="progress" style="height: 3rem;">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" 
-                                    style="width: <?php echo $perc; ?>%">
-                                        <?php echo $perc."% (".$total." / 500,000)"; ?>
-                                    </div>
-                                </div>
+                                <img src="./assets/bayanihan.jpg" class="img-fluid" alt="Responsive image">
+                                <p class="lead">
+                                Magandang Araw!
+
+                                    We can do something beyond locking ourselves in our homes this quarantine season.
+
+                                    This group is created to provide a venue for those who want to help in their own ways our front liners. How does this group work?
+
+                                    We connect all the key points necessary to help our front liners which include material suppliers, labor, delivery/logistics and donors. We already have direct connection with National Book Store, producers/suppliers of face masks, face shields and aerosol containers.
+
+                                    We also have direct contacts to some hospitals who need help. Apparently, government hospitals are not encouraged to actively seek donations and so we are coordinating directly with chief resident doctors for the help.
+
+                                    We have 3 bank accounts where you can deposit your help. We are creating a google form that you can fill up to allow us to track the incoming donation. This is led by Coach Meg Ramoso
+                                    We also have a google sheet that you can view to check the progress of the donation and the names of those who gave donations with the corresponding value. You may opt to use a pseudonym in the google form if you wish anonymity. 
+                                    No donation is too small nor too large. 10, 20, 100 or 1000 pesos will go a long way to help our healthcare front liners.
+
+                                    We will also show the breakdown and the relevant receipts for the expenses related to this activity.
+
+                                    Should you have questions or clarifications, please feel free to reach out to me. From time to time, we will also hold zoom meetings and update you guys on the progress. 
+
+                                    Looking forward to creating a difference with you! 
+                                </p>
                             </div>
                         </div>
                         
                        
 
-                        
-                        <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>Cash Donors </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Date</th>
-                                                <th>Amount</th>
-                                                <th>Donation Via</th>
-                                                <th>Notes</th>
-                                            </tr>
-                                        </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Date</th>
-                                                <th>Amount</th>
-                                                <th>Donation Via</th>
-                                                <th>Notes</th>
-                                            </tr>
-                                        </tfoot>
-                                        <tbody>
-                                        <?php 
-                                            $donations = "List of Cash Donors!B7:G200";
-                                            $response = $service->spreadsheets_values->get($spreadsheetId,$donations);
-                                            $values = $response->getValues();
-                                                
-                                            if(empty($values)){
-                                                print "error";    
-                                            } else {
-                                                foreach($values as $row){
-                                                    if(!isset($row[1]) && !isset($row[0])) continue;
-                                                    if(substr($row[0], 0, 9) === "Donations") continue;
-                                            ?>
-                                            <tr>
-                                                <td><?php print (isset($row[1])) ? $row[1] : null; ?></td>
-                                                <td><?php print (isset($row[0])) ? $row[0] : null; ?></td>
-                                                <td><?php print (isset($row[2])) ? $row[2] : null; ?></td>
-                                                <td><?php print (isset($row[4])) ? $row[4] : null; ?></td>
-                                                <td><?php print (isset($row[5])) ? $row[5] : null; ?></td>
-                                            </tr>
-                                            <?php
-                                                    }
-                                                }
-                                            ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>Non Cash Donors</div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Date</th>
-                                                <th>Donation</th>
-                                                <th>Target Recipient</th>
-                                                <th>Notes</th>
-                                            </tr>
-                                        </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Date</th>
-                                                <th>Donation</th>
-                                                <th>Target Recipient</th>
-                                                <th>Notes</th>
-                                            </tr>
-                                        </tfoot>
-                                        <tbody>
-                                        <?php 
-                                            $donations = "List of non Cash Donors!B4:F200";
-                                            $response = $service->spreadsheets_values->get($spreadsheetId,$donations);
-                                            $values = $response->getValues();
-                                                
-                                            if(empty($values)){
-                                                print "error";    
-                                            } else {
-                                                foreach($values as $row){
-                                                    if(!isset($row[1]) && !isset($row[0])) continue;
-                                                    
-                                            ?>
-                                            <tr>
-                                                <td><?php print (isset($row[1])) ? $row[1] : null; ?></td>
-                                                <td><?php print (isset($row[0])) ? $row[0] : null; ?></td>
-                                                <td><?php print (isset($row[2])) ? $row[2] : null; ?></td>
-                                                <td><?php print (isset($row[4])) ? $row[4] : null; ?></td>
-                                                <td><?php print (isset($row[5])) ? $row[5] : null; ?></td>
-                                            </tr>
-                                            <?php
-                                                    }
-                                                }
-                                            ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
 
-
-                    </div>
                 </main>
 
                 <?php 
