@@ -55,7 +55,10 @@
     function handleSignInClick(event) {
       gapi.auth2.getAuthInstance().signIn();
     }
-
+    </script>
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
             <div id="layoutSidenav_content">
                 <main>
