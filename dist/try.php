@@ -53,7 +53,6 @@
       var request = gapi.client.sheets.spreadsheets.values.get(params);
       var res = request.then(function(response) {
         // TODO: Change code below to process the `response` object:
-        console.log("response result");
         return response.result;
         //res = response.result;
       }, function(reason) {
@@ -102,9 +101,7 @@
     }
 
     function updateSignInStatus(isSignedIn) {
-      if (isSignedIn) {
         makeApiCall();
-      }
     }
 
     function handleSignInClick(event) {
