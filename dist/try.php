@@ -13,23 +13,7 @@
        https://developers.google.com/sheets/api/quickstart/js#step_2_set_up_the_sample
     -->
     <script>
-    function makeApiCall1() {
-        console.log('makeApiCall1');
-        var params = {
-        // The ID of the spreadsheet to retrieve data from.
-        spreadsheetId: '1LBicfoklwBlSKayw8k_cL_Lk_d4RD8iAuy0GDiJ3Pnk',  // TODO: Update placeholder value.
 
-        // The A1 notation of the values to retrieve.
-        range: 'List of Cash Donors!D4:D4',  // TODO: Update placeholder value.
-      };
-        var request = gapi.client.sheets.spreadsheets.values.get(params);
-        request.then(function(response) {
-            // TODO: Change code below to process the `response` object:
-            console.log(response.result);
-        }, function(reason) {
-            console.error('error: ' + reason.result.error.message);
-        });
-    }
     function makeApiCall() {
         
       var params = {
@@ -51,6 +35,7 @@
       };
 
       var request = gapi.client.sheets.spreadsheets.values.get(params);
+      console.log(request);
       var res = request.then(function(response) {
         // TODO: Change code below to process the `response` object:
         return response.result.values[0];
