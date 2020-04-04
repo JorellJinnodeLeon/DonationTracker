@@ -4,14 +4,64 @@
     <?php 
         require 'nav.php';
     ?>
-    
+    <script>
+
+    function makeApiCall() {
+      console.log('test');
+      var params = {
+        spreadsheetId: '1LBicfoklwBlSKayw8k_cL_Lk_d4RD8iAuy0GDiJ3Pnk',  
+        range: 'List of Cash Donors!D4:D4',  
+      };
+
+      var request = gapi.client.sheets.spreadsheets.values.get(params);
+      request.then(function(response) {
+        console.log(response.result);
+      }, function(reason) {
+        console.error('error: ' + reason.result.error.message);
+      });
+
+      
+    }
+
+    function initClient() {
+      var API_KEY = 'AIzaSyDTtjLT8wfsLFHSqDoPmClbcsyeOdgCYqM';  // TODO: Update placeholder with desired API key.
+      var CLIENT_ID = '25013647154-ur71nda0bd4vv3eg8a38e9sig75homhp.apps.googleusercontent.com';  // TODO: Update placeholder with desired client ID.
+
+      var SCOPE = 'https://www.googleapis.com/auth/spreadsheets.readonly';
+
+      gapi.client.init({
+        'apiKey': API_KEY,
+        'clientId': CLIENT_ID,
+        'scope': SCOPE,
+        'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+      }).then(function() {
+        gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
+        updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+      });
+    }
+
+    function handleClientLoad() {
+      gapi.load('client:auth2', initClient);
+    }
+
+    function updateSignInStatus(isSignedIn) {
+      if (isSignedIn) {
+        makeApiCall();
+      }
+    }
+
+    function handleSignInClick(event) {
+      gapi.auth2.getAuthInstance().signIn();
+    }
+
+    </script>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
                         <h1 class="mt-4">One Bayanihan Donation Tracker</h1>
 
                         <?php
-                            require __DIR__ . '/../vendor/autoload.php';
+                            /*require __DIR__ . '/../vendor/autoload.php';
                             $client = new \Google_Client();
                             $client->setApplicationName('Google Sheets and PHP');
                             $client->setScopes([\Google_Service_sheets::SPREADSHEETS]);
@@ -23,7 +73,7 @@
                             $total = "List of Cash Donors!D4:D4";
                             $response = $service->spreadsheets_values->get($spreadsheetId,$total);
                             $values = $response->getValues();
-
+                            */
                             if(empty($values)){
                                 print "error";    
                             } else {
