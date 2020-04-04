@@ -49,7 +49,8 @@
 
     function tblLooper(value) {
         //console.log(value);
-        if(value){
+        if(value)
+        {
             let date = value[0];
             let name = value[1];
             let amount = value[2];
@@ -70,24 +71,27 @@
             cell2.innerHTML = amount;
             cell3.innerHTML = via;
             cell4.innerHTML = notes;*/
-            
-            var t = $('#dataTable').DataTable();
-            var counter = 1;
-        
-            $('#addRow').on( 'click', function () {
-                t.row.add( [
-                    counter +'.1',
-                    counter +'.2',
-                    counter +'.3',
-                    counter +'.4',
-                    counter +'.5'
-                ] ).draw( );
-        
-                counter++;
-            } );
-            $('#addRow').click();
-            
-        }
+
+            var table = $('#dataTable').DataTable();
+ 
+            table.rows.add( [ {
+                    "date":       "date",
+                    "name":   "name",
+                    "amount":     "amount",
+                    "via": "via",
+                    "notes":     "Edinburgh",
+                    "extn":       "5421"
+                }, {
+                    "name": "Garrett Winters",
+                    "position": "Director",
+                    "salary": "$5,300",
+                    "start_date": "2011/07/25",
+                    "office": "Edinburgh",
+                    "extn": "8422"
+                } ] )
+                .draw();
+                        
+        }         
     }
 
     function initClient() {
