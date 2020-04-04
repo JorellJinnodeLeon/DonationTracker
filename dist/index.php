@@ -80,6 +80,10 @@
                 name, date, amount, via, notes
             ]).draw();
             */
+
+            $('#dataTables-example').DataTable().row.add([
+                'name', 'date', 'amount', 'via', 'notes'
+            ]).draw();
             //$("#dataTable > tbody").append("<tr><td>row content</td><td>row content</td><td>row content</td><td>row content</td><td>row content</td></tr>");
             
 
