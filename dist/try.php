@@ -35,16 +35,16 @@
       };
 
       var request = gapi.client.sheets.spreadsheets.values.get(params);
-      console.log(request);
       var res = request.then(function(response) {
         // TODO: Change code below to process the `response` object:
-        return response.result.values[0];
+        let ret = parseFloat(response.result.values[0])
+        return ret;
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
       });
 
       console.log('labas')
-      console.log(res['Of']);
+      console.log(res);
     }
 
     function initClient() {
