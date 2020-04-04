@@ -54,6 +54,10 @@
       request.then(function(response) {
         // TODO: Change code below to process the `response` object:
         console.log(response.result);
+        foreach(response.result as a){
+          console.log(a);
+        }
+
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
       });
