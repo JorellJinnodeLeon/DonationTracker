@@ -17,7 +17,6 @@
                             $client->setScopes([\Google_Service_sheets::SPREADSHEETS]);
                             $client->setAccessType('offline');
                             $client->setAuthConfig(__DIR__.'/credentials.json');
-                            var_dum($client);
                             $service= new Google_Service_Sheets($client);
                             $spreadsheetId = "1LBicfoklwBlSKayw8k_cL_Lk_d4RD8iAuy0GDiJ3Pnk";
 
