@@ -79,11 +79,18 @@
             /*$('#dataTables-example').DataTable().row.add([
                 name, date, amount, via, notes
             ]).draw();
-            */
-
-            $('#dataTables-example').DataTable().row.add([
-                'name', 'date', 'amount', 'via', 'notes'
-            ]).draw();
+            */var res = ;
+            if(!name && !date && !amount && !via && !notes){
+                console.log(empty);
+            }  
+            else if(date.substring(0, 9) == "donations"){
+                console.log(donations);
+            } 
+            else{                     
+                $('#dataTables-example').DataTable().row.add([
+                    'name', 'date', 'amount', 'via', 'notes'
+                ]).draw();
+            }
             //$("#dataTable > tbody").append("<tr><td>row content</td><td>row content</td><td>row content</td><td>row content</td><td>row content</td></tr>");
             
 
