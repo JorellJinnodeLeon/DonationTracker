@@ -54,7 +54,7 @@
       var res = request.then(function(response) {
         // TODO: Change code below to process the `response` object:
         console.log("response result");
-        return response.result['values'];
+        return response.result;
         //res = response.result;
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
@@ -62,6 +62,10 @@
 
       console.log("res");
       console.log(res);
+      foreach(let a on res){
+        console.log(a);
+      }
+
       /*console.log("range");
       console.log(res.range);
 
