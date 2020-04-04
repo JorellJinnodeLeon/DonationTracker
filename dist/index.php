@@ -16,10 +16,10 @@
       var request = gapi.client.sheets.spreadsheets.values.get(params);
       request.then(function(response) {
         let total = response.result.values[0];
-        alert(total);
+        console.log(total);
         total = total.replace(/,/g,"");
         let perc = ((total/500000)*100);
-        alert(perc);
+        console.log(perc);
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
       });
