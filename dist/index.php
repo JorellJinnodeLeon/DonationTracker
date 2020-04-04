@@ -158,19 +158,19 @@
                             </div>
                         </div>
                         
-                       <!--
+                       
                         <div class="card mb-4">
                             <div class="card-header"><i class="fas fa-table mr-1"></i>DataTable Example</div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTables-example" width="100%" cellspacing="0">
+                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example" border="1">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Date</th>
-                                                <th>Amount</th>
-                                                <th>Donation Via</th>
-                                                <th>Notes</th>
+                                            <th>Name</th>
+                                            <th>Date</th>
+                                            <th>Amount</th>
+                                            <th>Donation Via</th>
+                                            <th>Notes</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -183,41 +183,13 @@
                                             </tr>
                                         </tfoot>
                                         <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>            
-                        -->
-                        <table class="table table-striped table-bordered table-hover" id="dataTables-example" border="1">
-                            <thead>
-                                <tr>
-                                <th>Name</th>
-                                <th>Date</th>
-                                <th>Amount</th>
-                                <th>Donation Via</th>
-                                <th>Notes</th>
-                                </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Date</th>
-                                    <th>Amount</th>
-                                    <th>Donation Via</th>
-                                    <th>Notes</th>
-                                </tr>
-                            </tfoot>
-                            <tbody>
-                            </tbody>
-                        </table>
+                        
+                        
 
 
                     </div>
