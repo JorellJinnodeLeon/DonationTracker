@@ -56,21 +56,6 @@
             let via = (value[4]) ? value[4] : null ; 
             let notes = (value[5]) ? value[5] : null ; 
 
-
-            
-            /*var table = document.getElementById("dataTable");
-            var row = table.insertRow(1);
-            var cell0 = row.insertCell(0);
-            var cell1 = row.insertCell(1);
-            var cell2 = row.insertCell(2);
-            var cell3 = row.insertCell(3);
-            var cell4 = row.insertCell(4);
-
-            cell0.innerHTML = name;
-            cell1.innerHTML = date;
-            cell2.innerHTML = amount;
-            cell3.innerHTML = via;
-            cell4.innerHTML = notes;*/
             console.log('add2');
             console.log(name);
             console.log(date);
@@ -80,7 +65,7 @@
             /*$('#dataTables-example').DataTable().row.add([
                 name, date, amount, via, notes
             ]).draw();
-            */var res = ;
+            */
             if(!name && !date && !amount && !via && !notes){
                 console.log(empty);
             }  
@@ -92,7 +77,7 @@
                     'name', 'date', 'amount', 'via', 'notes'
                 ]).draw();
             }
-            //$("#dataTable > tbody").append("<tr><td>row content</td><td>row content</td><td>row content</td><td>row content</td><td>row content</td></tr>");
+           
             
 
 
