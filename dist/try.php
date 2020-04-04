@@ -49,13 +49,14 @@
         // The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
         // dateTimeRenderOption: '',  // TODO: Update placeholder value.
       };
+
       var res = [];
       var request = gapi.client.sheets.spreadsheets.values.get(params);
-      request.then(function(response) {
+      res = request.then(function(response) {
         // TODO: Change code below to process the `response` object:
         console.log("response result");
-        console.log(response.result.values);
-        res = response.result;
+        return response.result.values;
+        //res = response.result;
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
       });
