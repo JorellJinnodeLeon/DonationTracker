@@ -12,10 +12,14 @@
         spreadsheetId: '1LBicfoklwBlSKayw8k_cL_Lk_d4RD8iAuy0GDiJ3Pnk',  
         range: 'List of Cash Donors!D4:D4',  
       };
-
+        
       var request = gapi.client.sheets.spreadsheets.values.get(params);
       request.then(function(response) {
-        console.log(response.result);
+        let total = response.result.values[0];
+        alert(total);
+        total = total.replace(/,/g,"");
+        let perc = ((total/500000)*100);
+        alert(perc);
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
       });
@@ -45,9 +49,7 @@
     }
 
     function updateSignInStatus(isSignedIn) {
-      if (isSignedIn) {
         makeApiCall();
-      }
     }
 
     function handleSignInClick(event) {
@@ -73,7 +75,7 @@
                             $total = "List of Cash Donors!D4:D4";
                             $response = $service->spreadsheets_values->get($spreadsheetId,$total);
                             $values = $response->getValues();
-                            */
+                            
                             if(empty($values)){
                                 print "error";    
                             } else {
@@ -83,7 +85,7 @@
                             }
                             $total2 = str_replace( ',', '', $total );
                             $perc = (int)(($total2/500000)*100);
-                            
+                            */
                         ?>
                         <div class="card mb-4">
                             <div class="card-header"><i class="fas fa-table mr-1"></i>Total Donations</div>

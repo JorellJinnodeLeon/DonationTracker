@@ -35,17 +35,14 @@
       };
 
       var request = gapi.client.sheets.spreadsheets.values.get(params);
-      var res = request.then(function(response) {
+      request.then(function(response) {
         // TODO: Change code below to process the `response` object:
-        let ret = response.result.values[0];
-        alert(ret);
-        return ret;
+        let total = response.result.values[0];
+
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
       });
 
-      console.log('nsa labas')
-      console.log(res);
     }
 
     function initClient() {
