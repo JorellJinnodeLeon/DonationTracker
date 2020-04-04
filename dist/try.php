@@ -1,6 +1,6 @@
 <html>
   <head></head>
-  <body>
+  <body onload="makeApiCall()">
     <!--
     BEFORE RUNNING:
     ---------------
@@ -35,6 +35,7 @@
       var request = gapi.client.sheets.spreadsheets.values.get(params);
       request.then(function(response) {
         // TODO: Change code below to process the `response` object:
+        alert(reponse.result);
         console.log(response.result);
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
