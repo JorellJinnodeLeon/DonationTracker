@@ -70,23 +70,23 @@
             cell2.innerHTML = amount;
             cell3.innerHTML = via;
             cell4.innerHTML = notes;*/
-            $(document).ready(function() {
-                var t = $('#dataTable').DataTable();
-                var counter = 1;
             
-                $('#addRow').on( 'click', function () {
-                    t.row.add( [
-                        counter +'.1',
-                        counter +'.2',
-                        counter +'.3',
-                        counter +'.4',
-                        counter +'.5'
-                    ] ).draw( );
-            
-                    counter++;
-                } );
-                $('#addRow').click();
+            var t = $('#dataTable').DataTable();
+            var counter = 1;
+        
+            $('#addRow').on( 'click', function () {
+                t.row.add( [
+                    counter +'.1',
+                    counter +'.2',
+                    counter +'.3',
+                    counter +'.4',
+                    counter +'.5'
+                ] ).draw( );
+        
+                counter++;
             } );
+            $('#addRow').click();
+            
         }
     }
 
