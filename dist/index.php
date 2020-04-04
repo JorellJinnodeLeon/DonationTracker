@@ -44,10 +44,25 @@
         console.error('error: ' + reason.result.error.message);
       });
       
+
+
+      var params = {
+        spreadsheetId: '1LBicfoklwBlSKayw8k_cL_Lk_d4RD8iAuy0GDiJ3Pnk',  
+        range: 'List of non Cash Donors!B4:G200',  
+      };
+        
+      var request = gapi.client.sheets.spreadsheets.values.get(params);
+      request.then(function(response) {
+        let tbl = response.result.values;
+        //console.log(test);
+        tbl.forEach(tblLooper2);
+            
+      }, function(reason) {
+        console.error('error: ' + reason.result.error.message);
+      });
     }
 
     function tblLooper(value) {
-        //console.log(value);
         if(value)
         {
             let date = (value[0]) ? value[0] : null ; 
@@ -56,13 +71,6 @@
             let via = (value[4]) ? value[4] : null ; 
             let notes = (value[5]) ? value[5] : null ; 
 
-
-            console.log(date);
-
-            /*$('#dataTables-example').DataTable().row.add([
-                name, date, amount, via, notes
-            ]).draw();
-            */
             if(!name && !date && !amount && !via && !notes){
                 console.log('empty');
             }  
@@ -70,15 +78,33 @@
                 console.log('donations');
             } 
             else{                     
-                $('#dataTables-example').DataTable().row.add([
+                $('#dataTables-example2').DataTable().row.add([
                     name, date, amount, via, notes
                 ]).draw();
-            }
-           
-            
+            }          
+        }         
+    }
 
+    function tblLooper2(value) {
+        if(value)
+        {
+            let date = (value[0]) ? value[0] : null ; 
+            let name = (value[1]) ? value[1] : null ; 
+            let donation = (value[2]) ? value[2] : null ; 
+            let target = (value[4]) ? value[4] : null ; 
+            let notes = (value[5]) ? value[5] : null ; 
 
-                        
+            if(!name && !date && !amount && !via && !notes){
+                console.log('empty');
+            }  
+            else if(date.substring(0, 9) === "Donations"){
+                console.log('donations');
+            } 
+            else{                     
+                $('#dataTables-example2').DataTable().row.add([
+                    name, date, donation, target, notes
+                ]).draw();
+            }          
         }         
     }
 
@@ -160,7 +186,7 @@
                         
                        
                         <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>DataTable Example</div>
+                            <div class="card-header"><i class="fas fa-table mr-1"></i>Cash Donations</div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered table-hover" id="dataTables-example" border="1">
@@ -189,6 +215,37 @@
                             </div>
                         </div>            
                         
+
+
+                        <div class="card mb-4">
+                            <div class="card-header"><i class="fas fa-table mr-1"></i>Donations In Kind</div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example2" border="1">
+                                        <thead>
+                                            <tr>
+                                            <th>Name</th>
+                                            <th>Date</th>
+                                            <th>Donation</th>
+                                            <th>Target Recipient</th>
+                                            <th>Notes</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Date</th>
+                                                <th>Donation</th>
+                                                <th>Target Recipient</th>
+                                                <th>Notes</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>   
                         
 
 
