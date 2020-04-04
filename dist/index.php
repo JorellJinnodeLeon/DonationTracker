@@ -28,7 +28,7 @@
       });
 
       
-
+      
       var params = {
         spreadsheetId: '1LBicfoklwBlSKayw8k_cL_Lk_d4RD8iAuy0GDiJ3Pnk',  
         range: 'List of Cash Donors!B7:G200',  
@@ -70,9 +70,12 @@
             cell2.innerHTML = amount;
             cell3.innerHTML = via;
             cell4.innerHTML = notes;*/
-            console.log('add1');
-
-            $("#dataTable > tbody").append("<tr><td>row content</td><td>row content</td><td>row content</td><td>row content</td><td>row content</td></tr>");
+            console.log('add2');
+            $('#dataTables-example').DataTable().row.add([
+                '1', '1', '1', '1', '1'
+            ]).draw();
+            
+            //$("#dataTable > tbody").append("<tr><td>row content</td><td>row content</td><td>row content</td><td>row content</td><td>row content</td></tr>");
             
 
 
@@ -156,12 +159,12 @@
                             </div>
                         </div>
                         
-                       
+                       <!--
                         <div class="card mb-4">
                             <div class="card-header"><i class="fas fa-table mr-1"></i>DataTable Example</div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <table class="table table-bordered" id="dataTables-example" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
@@ -193,7 +196,20 @@
                                 </div>
                             </div>
                         </div>            
-                        
+                        -->
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example" border="1">
+                            <thead>
+                                <tr>
+                                <th>Name</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Donation Via</th>
+                                <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
 
 
                     </div>
