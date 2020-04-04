@@ -59,7 +59,7 @@
       });
 
       console.log('test2')
-      console.table(res);
+      console.log(res);
     }
 
     function initClient() {
