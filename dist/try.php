@@ -37,13 +37,14 @@
       var request = gapi.client.sheets.spreadsheets.values.get(params);
       var res = request.then(function(response) {
         // TODO: Change code below to process the `response` object:
-        let ret = parseFloat(response.result.values[0])
+        let ret = parseFloat(response.result.values[0]);
+        alert(ret);
         return ret;
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
       });
 
-      console.log('labas')
+      console.log('nsa labas')
       console.log(res);
     }
 
