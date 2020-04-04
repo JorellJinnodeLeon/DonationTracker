@@ -71,9 +71,13 @@
             cell3.innerHTML = via;
             cell4.innerHTML = notes;*/
             console.log('add');
-            $('dataTable').DataTable().row.add([
-            '1', '1', '1', '1', '1'
-            ]).draw();
+            $(document).ready( function () {
+                $('dataTable').DataTable().row.add([
+                '1', '1', '1', '1', '1'
+                ]).draw();
+            } );
+
+            
 
 
                         
