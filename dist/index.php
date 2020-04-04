@@ -37,12 +37,19 @@
         
       var request = gapi.client.sheets.spreadsheets.values.get(params);
       request.then(function(response) {
-        let test = response.result.values;
-        console.log(test);
+        let tbl = response.result.values;
+        //console.log(test);
+        tblLooper.forEach(myFunction);
+
+            
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
       });
       
+    }
+
+    function tblLooper(value) {
+        console.log(value);
     }
 
     function initClient() {
