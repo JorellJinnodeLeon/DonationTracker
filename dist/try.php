@@ -62,9 +62,7 @@
 
       console.log("res");
       console.log(res);
-      foreach(let a on res){
-        console.log(a);
-      }
+
 
       /*console.log("range");
       console.log(res.range);
