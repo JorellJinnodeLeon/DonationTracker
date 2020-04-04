@@ -25,20 +25,20 @@
                                 Home</a
                             >
                             <div class="sb-sidenav-menu-heading">About Us</div>
-                            <a class="nav-link" href="about.html"
+                            <a class="nav-link" href="about.php"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                                 The Organization</a
-                            >
+                            ><!--
                             <a class="nav-link" href="contact.html"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-phone"></i></div>
                                 Contact Us</a
-                            >
+                            > -->
                             <div class="sb-sidenav-menu-heading">Donations</div>
-                            <a class="nav-link" href="expenses.html"
+                            <a class="nav-link" href="expenses.php"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-minus-circle"></i></div>
                                 Expenses and Allocation</a
                             >
-                            <a class="nav-link" href="donate.html"
+                            <a class="nav-link" href="donate.php"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-ambulance"></i></div>
                                 How to Donate</a
                             >
