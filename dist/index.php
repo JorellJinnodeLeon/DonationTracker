@@ -78,7 +78,7 @@
                 console.log('donations');
             } 
             else{                     
-                $('#dataTables-example2').DataTable().row.add([
+                $('#dataTables-example').DataTable().row.add([
                     name, date, amount, via, notes
                 ]).draw();
             }          
