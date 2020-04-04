@@ -17,7 +17,7 @@
       request.then(function(response) {
         let total = response.result.values[0];
         console.log(total);
-        total = total.replace(/,/g,"");
+        total = parseFloat(total.toString().replace(/,/g,""));
         let perc = ((total/500000)*100);
         console.log(perc);
       }, function(reason) {
