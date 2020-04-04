@@ -44,7 +44,7 @@
       });
 
       console.log('labas')
-      console.log(res);
+      console.log(res['Of']);
     }
 
     function initClient() {
