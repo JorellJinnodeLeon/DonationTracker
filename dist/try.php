@@ -54,7 +54,7 @@
       var res = request.then(function(response) {
         // TODO: Change code below to process the `response` object:
         console.log("response result");
-        return response.result.values;
+        return response.result.values.Of;
         //res = response.result;
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
