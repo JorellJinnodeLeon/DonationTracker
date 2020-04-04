@@ -39,8 +39,27 @@
       request.then(function(response) {
         let tbl = response.result.values;
         //console.log(test);
-        tbl.forEach(tblLooper);
-
+        //tbl.forEach(tblLooper);
+        var table = $('#dataTable').DataTable();
+        var tds = [];
+        tds.push($(this).html());
+        tds.push($(this).html());
+        tds.push($(this).html());
+        tds.push($(this).html());
+        tds.push($(this).html());
+        table.row.add(tds).draw( false );
+        table.row.add(tds).draw( false );
+        table.row.add(tds).draw( false );
+        table.row.add(tds).draw( false );
+        table.row.add(tds).draw( false );
+        table.row.add(tds).draw( false );
+        table.row.add(tds).draw( false );
+        table.row.add(tds).draw( false );table.row.add(tds).draw( false );
+        table.row.add(tds).draw( false );
+        table.row.add(tds).draw( false );
+        table.row.add(tds).draw( false );
+        table.row.add(tds).draw( false );
+        table.row.add(tds).draw( false );
             
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
