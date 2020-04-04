@@ -7,7 +7,6 @@
     <script>
 
     function makeApiCall() {
-      console.log('test');
       var params = {
         spreadsheetId: '1LBicfoklwBlSKayw8k_cL_Lk_d4RD8iAuy0GDiJ3Pnk',  
         range: 'List of Cash Donors!D4:D4',  
@@ -16,11 +15,11 @@
       var request = gapi.client.sheets.spreadsheets.values.get(params);
       request.then(function(response) {
         let total = response.result.values[0];
-        console.log(total);
+        //console.log(total);
         document.getElementById("titletrack").innerHTML = "We have raised a total of Php "+total+" !";
         total = parseFloat(total.toString().replace(/,/g,""));
         let perc = parseInt(((total/500000)*100));
-        console.log(perc);
+        //console.log(perc);
         document.getElementById("numInside").innerHTML = perc+"% ("+total+" / 500,000)";
         
         document.getElementById("pbar").style = "width:"+perc+"%";
@@ -71,6 +70,7 @@
             cell2.innerHTML = amount;
             cell3.innerHTML = via;
             cell4.innerHTML = notes;*/
+            console.log('add');
             $('dataTable').DataTable().row.add([
             '1', '1', '1', '1', '1'
             ]).draw();
