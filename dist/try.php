@@ -37,7 +37,7 @@
       var request = gapi.client.sheets.spreadsheets.values.get(params);
       var res = request.then(function(response) {
         // TODO: Change code below to process the `response` object:
-        let ret = parseFloat(response.result.values[0]);
+        let ret = response.result.values[0];
         alert(ret);
         return ret;
       }, function(reason) {
