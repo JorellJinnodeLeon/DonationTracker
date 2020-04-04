@@ -70,13 +70,9 @@
             cell2.innerHTML = amount;
             cell3.innerHTML = via;
             cell4.innerHTML = notes;*/
-            console.log('add');
-            $(document).ready( function () {
-                $('dataTable').DataTable().row.add([
-                '1', '1', '1', '1', '1'
-                ]).draw();
-            } );
+            console.log('add1');
 
+            $("#dataTable > tbody").append("<tr><td>row content</td><td>row content</td><td>row content</td><td>row content</td><td>row content</td></tr>");
             
 
 
