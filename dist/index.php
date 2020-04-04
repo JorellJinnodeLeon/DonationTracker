@@ -72,7 +72,7 @@
             cell4.innerHTML = notes;*/
             console.log('add2');
             $('#dataTables-example').DataTable().row.add([
-                '1', '1', '1', '1', '1'
+                name, date, amount, via, notes
             ]).draw();
             
             //$("#dataTable > tbody").append("<tr><td>row content</td><td>row content</td><td>row content</td><td>row content</td><td>row content</td></tr>");
@@ -207,6 +207,15 @@
                                 <th>Notes</th>
                                 </tr>
                             </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Donation Via</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </tfoot>
                             <tbody>
                             </tbody>
                         </table>
