@@ -17,11 +17,13 @@
       request.then(function(response) {
         let total = response.result.values[0];
         console.log(total);
+        document.getElementById("titletrack").innerHTML = "We have raised a total of Php "+total+" !";
         total = parseFloat(total.toString().replace(/,/g,""));
         let perc = parseInt(((total/500000)*100));
         console.log(perc);
-
-        document.getElementById("titletrack").innerHTML = "We have raised a total of Php "+total+" !";
+        document.getElementById("numInside").innerHTML = perc+"% ("+total+" / 500,000)";
+        
+        document.getElementById("pbar").style = "width:"+perc+"%";
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
       });
@@ -97,9 +99,9 @@
                             <div class="card-body">
                                 <h1 id="titletrack"> </h1>
                                 <div class="progress" style="height: 3rem;">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" 
-                                    style="width: <?php echo $perc; ?>%">
-                                        <?php echo $perc."% (".$total." / 500,000)"; ?>
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" id="pbar" role="progressbar" 
+                                    style="width:10%">
+                                        <span id="numInside"> </span>
                                     </div>
                                 </div>
                             </div>
