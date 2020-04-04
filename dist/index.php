@@ -167,15 +167,7 @@
                                                 <th>Notes</th>
                                             </tr>
                                         </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Date</th>
-                                                <th>Amount</th>
-                                                <th>Donation Via</th>
-                                                <th>Notes</th>
-                                            </tr>
-                                        </tfoot>
+                                       
                                         <tbody>
                                         <?php /*
                                             $donations = "List of Cash Donors!B7:G200";
@@ -202,6 +194,16 @@
                                                 } */
                                             ?>
                                         </tbody>
+
+                                        <tfoot>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Date</th>
+                                                <th>Amount</th>
+                                                <th>Donation Via</th>
+                                                <th>Notes</th>
+                                            </tr>
+                                        </tfoot>
                                     </table>
                                 </div>
                             </div>
