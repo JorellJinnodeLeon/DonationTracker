@@ -21,7 +21,7 @@
         let perc = parseInt(((total/500000)*100));
         console.log(perc);
 
-        document.getElementById("titletrack").innerHTML = "We have raised a total of Php ".total." !";
+        document.getElementById("titletrack").innerHTML = "We have raised a total of Php "+total+" !";
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
       });
