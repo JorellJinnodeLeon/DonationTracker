@@ -14,8 +14,7 @@
     -->
     <script>
     function makeApiCall1() {
-        alert('testaaa');
-
+        console.log('makeApiCall1');
         var params = {
         // The ID of the spreadsheet to retrieve data from.
         spreadsheetId: '1LBicfoklwBlSKayw8k_cL_Lk_d4RD8iAuy0GDiJ3Pnk',  // TODO: Update placeholder value.
@@ -32,6 +31,7 @@
         });
     }
     function makeApiCall() {
+        console.log('signin');
       var params = {
         // The ID of the spreadsheet to retrieve data from.
         spreadsheetId: '1LBicfoklwBlSKayw8k_cL_Lk_d4RD8iAuy0GDiJ3Pnk',  // TODO: Update placeholder value.
@@ -107,5 +107,6 @@
     </script>
     <button id="signin-button" onclick="handleSignInClick()" onload="makeApiCall1()" >Sign in</button>
     <button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
+    
   </body>
 </html>
