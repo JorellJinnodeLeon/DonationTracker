@@ -29,6 +29,20 @@
       });
 
       
+
+      var params = {
+        spreadsheetId: '1LBicfoklwBlSKayw8k_cL_Lk_d4RD8iAuy0GDiJ3Pnk',  
+        range: 'List of Cash Donors!B7:G200',  
+      };
+        
+      var request = gapi.client.sheets.spreadsheets.values.get(params);
+      request.then(function(response) {
+        let test = response.result.values;
+        console.log(test);
+      }, function(reason) {
+        console.error('error: ' + reason.result.error.message);
+      });
+      
     }
 
     function initClient() {
