@@ -53,18 +53,22 @@
       var request = gapi.client.sheets.spreadsheets.values.get(params);
       request.then(function(response) {
         // TODO: Change code below to process the `response` object:
-        //console.log(response.result);
-        res = response;
+        console.log("response result");
+        console.log(response.result);
+        res = response.result;
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
       });
-      console.log("range");
+
+      console.log("res");
+      console.log(res);
+      /*console.log("range");
       console.log(res.range);
 
       console.log("asdasdasd");
       foreach(let a on res.values){
         console.log(a);
-      }
+      }*/
     }
 
     function initClient() {
