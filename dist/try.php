@@ -51,7 +51,7 @@
       };
 
       var request = gapi.client.sheets.spreadsheets.values.get(params);
-      obj res = request.then(function(response) {
+      var res = request.then(function(response) {
         // TODO: Change code below to process the `response` object:
         return response.result;
       }, function(reason) {
