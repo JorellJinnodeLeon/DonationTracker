@@ -59,7 +59,7 @@
         console.error('error: ' + reason.result.error.message);
       });
 
-      console.log(res.result);
+      console.log(res);
     }
 
     function initClient() {
