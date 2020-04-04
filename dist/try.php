@@ -31,7 +31,7 @@
         });
     }
     function makeApiCall() {
-        console.log('signin222');
+        
       var params = {
         // The ID of the spreadsheet to retrieve data from.
         spreadsheetId: '1LBicfoklwBlSKayw8k_cL_Lk_d4RD8iAuy0GDiJ3Pnk',  // TODO: Update placeholder value.
@@ -51,15 +51,15 @@
       };
 
       var request = gapi.client.sheets.spreadsheets.values.get(params);
-      var res = request.then(function(response) {
+      obj res = request.then(function(response) {
         // TODO: Change code below to process the `response` object:
         return response.result;
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
       });
 
-      console.log('test')
-      console.log(res);
+      console.log('test2')
+      console.table(res);
     }
 
     function initClient() {
