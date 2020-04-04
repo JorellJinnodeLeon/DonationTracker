@@ -18,8 +18,10 @@
         let total = response.result.values[0];
         console.log(total);
         total = parseFloat(total.toString().replace(/,/g,""));
-        let perc = ((total/500000)*100);
+        let perc = parseInt(((total/500000)*100));
         console.log(perc);
+
+        document.getElementById("titletrack").innerHTML = "We have raised a total of Php ".total." !";
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
       });
@@ -93,7 +95,7 @@
                         <div class="card mb-4">
                             <div class="card-header"><i class="fas fa-table mr-1"></i>Total Donations</div>
                             <div class="card-body">
-                                <h1> We have raised a total of <?php echo $total ?> Php !</h1>
+                                <h1 id="titletrack"> </h1>
                                 <div class="progress" style="height: 3rem;">
                                     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" 
                                     style="width: <?php echo $perc; ?>%">
