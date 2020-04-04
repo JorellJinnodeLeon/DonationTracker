@@ -1,6 +1,6 @@
 <html>
   <head></head>
-  <body onload="makeApiCall()">
+  <body >
     <!--
     BEFORE RUNNING:
     ---------------
@@ -13,6 +13,24 @@
        https://developers.google.com/sheets/api/quickstart/js#step_2_set_up_the_sample
     -->
     <script>
+    function makeApiCall1() {
+        alert('testaaa');
+
+        var params = {
+        // The ID of the spreadsheet to retrieve data from.
+        spreadsheetId: '1LBicfoklwBlSKayw8k_cL_Lk_d4RD8iAuy0GDiJ3Pnk',  // TODO: Update placeholder value.
+
+        // The A1 notation of the values to retrieve.
+        range: 'List of Cash Donors!D4:D4',  // TODO: Update placeholder value.
+      };
+        var request = gapi.client.sheets.spreadsheets.values.get(params);
+        request.then(function(response) {
+            // TODO: Change code below to process the `response` object:
+            console.log(response.result);
+        }, function(reason) {
+            console.error('error: ' + reason.result.error.message);
+        });
+    }
     function makeApiCall() {
       var params = {
         // The ID of the spreadsheet to retrieve data from.
@@ -35,7 +53,6 @@
       var request = gapi.client.sheets.spreadsheets.values.get(params);
       request.then(function(response) {
         // TODO: Change code below to process the `response` object:
-        alert(reponse.result);
         console.log(response.result);
       }, function(reason) {
         console.error('error: ' + reason.result.error.message);
@@ -88,7 +105,7 @@
       onload="this.onload=function(){};handleClientLoad()"
       onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
-    <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
+    <button id="signin-button" onclick="handleSignInClick()" onload="makeApiCall1()" >Sign in</button>
     <button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
   </body>
 </html>
