@@ -11,7 +11,7 @@
                         <h1 class="mt-4">How to Donate</h1>
 
                         <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>The Organization</div>
+                            <div class="card-header"><i class="fas fa-table mr-1"></i></div>
                                 <div class="card-body">
                                     <div class="text-center">
                                         <img src="./assets/img/donate.jpg" class="img-fluid" alt="Responsive image">
