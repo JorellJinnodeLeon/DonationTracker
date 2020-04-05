@@ -27,7 +27,7 @@
 
       var params = {
         spreadsheetId: '1LBicfoklwBlSKayw8k_cL_Lk_d4RD8iAuy0GDiJ3Pnk',  
-        range: 'List of non Cash Donors!B4:G200',  
+        range: 'Allocation!A4:L200',  
       };
         
       var request = gapi.client.sheets.spreadsheets.values.get(params);
