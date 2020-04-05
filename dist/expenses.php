@@ -170,7 +170,7 @@
 
 
                         <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>Donations In Kind</div>
+                            <div class="card-header"><i class="fas fa-table mr-1"></i>Allocation</div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered table-hover" id="dataTables-example2" border="1">
