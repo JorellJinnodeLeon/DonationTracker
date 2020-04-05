@@ -49,7 +49,7 @@
             let item = (value[2]) ? value[2] : null ; 
             let unit = (value[3]) ? value[3] : null ; 
             let unitCost = (value[4]) ? value[4] : null ; 
-            let qty = (value[5]) ? value[5 : null ; 
+            let qty = (value[5]) ? value[5] : null ; 
             let totCost = (value[6]) ? value[6] : null ; 
             let dateOrdered = (value[7]) ? value[7] : null ; 
             let paid = (value[8]) ? value[8] : null ; 
@@ -71,7 +71,7 @@
             let smask = (value[2]) ? value[2] : null ; 
             let alc = (value[3]) ? value[3] : null ; 
             let n95 = (value[4]) ? value[4] : null ; 
-            let hwash = (value[5]) ? value[5 : null ; 
+            let hwash = (value[5]) ? value[5] : null ; 
             let hsoap = (value[6]) ? value[6] : null ; 
             let soln = (value[7]) ? value[7] : null ; 
             let sanit = (value[8]) ? value[8] : null ; 
